@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>QrMarksetting — Générateur QR brandé</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="panel controls">
+        <h1>Générateur QR personnalisé</h1>
+        <p>
+          Style inspiré de votre visuel de référence (grains, bords arrondis, badge central).
+        </p>
+
+        <label>URL de destination
+          <input id="targetUrl" type="url" value="https://example.com/entree" />
+        </label>
+
+        <div class="row">
+          <label>Langue CTA
+            <select id="language">
+              <option value="fr">Français</option>
+              <option value="en">English</option>
+              <option value="it">Italiano</option>
+            </select>
+          </label>
+
+          <label>Texte haut
+            <input id="topText" type="text" value="HUNGRY?" />
+          </label>
+        </div>
+
+        <label>Texte bas (CTA)
+          <input id="ctaText" type="text" value="REJOINS NOUS" />
+        </label>
+
+        <div class="row">
+          <label>Couleur QR
+            <input id="qrColor" type="color" value="#6f3a1d" />
+          </label>
+          <label>Fond
+            <input id="bgColor" type="color" value="#f9f3ea" />
+          </label>
+        </div>
+
+        <fieldset>
+          <legend>Assets remplaçables (sans toucher au QR)</legend>
+          <label>Logo central
+            <input id="logoFile" type="file" accept="image/*" />
+          </label>
+          <label>Motif décoratif (optionnel)
+            <input id="patternFile" type="file" accept="image/*" />
+          </label>
+          <label>Icône coin (optionnel)
+            <input id="cornerFile" type="file" accept="image/*" />
+          </label>
+        </fieldset>
+
+        <div class="actions">
+          <button id="generateBtn">Générer</button>
+          <button id="downloadPngBtn">Télécharger PNG</button>
+          <button id="downloadJpegBtn">Télécharger JPEG</button>
+        </div>
+
+        <p class="note">
+          ⚠️ Aucun générateur ne peut forcer toutes les apps scanner à ouvrir le lien sans action. Pour maximiser l'ouverture directe, utilisez une URL HTTPS simple et stable.
+        </p>
+      </section>
+
+      <section class="panel preview">
+        <canvas id="qrCanvas" width="1200" height="1200" aria-label="Aperçu QR"></canvas>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

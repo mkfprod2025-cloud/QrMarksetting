@@ -1,0 +1,90 @@
+:root {
+  --paper: #f5efe4;
+  --ink: #3b1f10;
+  --soft: #9b6b48;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: radial-gradient(circle at top, #f2e8d7, #ebe1d2 60%, #e1d7c8);
+  color: var(--ink);
+}
+
+.layout {
+  min-height: 100vh;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(320px, 420px) 1fr;
+  padding: 1rem;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #d7c7b1;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(84, 48, 23, 0.12);
+}
+
+.controls label,
+.controls fieldset { display: block; margin-bottom: 0.7rem; }
+.controls input,
+.controls select,
+.controls button {
+  width: 100%;
+  border: 1px solid #bea183;
+  border-radius: 10px;
+  padding: 0.55rem 0.7rem;
+  margin-top: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+}
+
+fieldset {
+  border: 1px dashed #be9c7b;
+  border-radius: 10px;
+  padding: 0.7rem;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+button {
+  cursor: pointer;
+  background: #6e3a1d;
+  color: #fff;
+  font-weight: 600;
+}
+
+.preview {
+  display: grid;
+  place-items: center;
+}
+
+#qrCanvas {
+  width: min(92vw, 760px);
+  height: auto;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #d7c7b1;
+}
+
+.note {
+  font-size: 0.86rem;
+  color: #58351d;
+}
+
+@media (max-width: 1024px) {
+  .layout { grid-template-columns: 1fr; }
+}
